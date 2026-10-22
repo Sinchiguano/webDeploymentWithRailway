@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Smart Devices | ULEAM Home Automation
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav class="top-navigation">
+
+        <a
+            href="{{ url_for('index') }}"
+            class="nav-brand"
+        >
+
+            <span class="nav-logo">
+                🏠
+            </span>
+
+
+            <div>
+
+                <strong>
+                    ULEAM Smart Home
+                </strong>
+
+                <small>
+                    Software Engineering
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a
+                href="{{ url_for('index') }}"
+                class="nav-link"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="{{ url_for('devices') }}"
+                class="nav-link active"
+            >
+                Devices
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         PAGE HEADER
+    ====================================================== -->
+
+    <header class="device-page-header">
+
+        <div>
+
+            <span class="page-eyebrow">
+                REAL-TIME CONTROL
+            </span>
+
+            <h1>
+                Smart Devices
+            </h1>
+
+            <p>
+                Monitor and control the IoT devices connected
+                through EMQX Cloud.
+            </p>
+
+        </div>
+
+
+        <div
+            id="mqtt-badge"
+            class="mqtt-badge offline"
+        >
+            ● CONNECTING
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         QUICK STATUS
+    ====================================================== -->
+
+    <section class="device-summary">
+
+        <div class="summary-card">
+
+            <span class="summary-icon">
+                💡
+            </span>
+
+            <div>
+
+                <small>
+                    Lighting
+                </small>
+
+                <strong>
+                    3 Devices
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span class="summary-icon">
+                🔐
+            </span>
+
+            <div>
+
+                <small>
+                    Access
+                </small>
+
+                <strong>
+                    Smart Door
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span class="summary-icon">
+                📡
+            </span>
+
+            <div>
+
+                <small>
+                    Protocol
+                </small>
+
+                <strong>
+                    MQTT + TLS
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span class="summary-icon">
+                ☁️
+            </span>
+
+            <div>
+
+                <small>
+                    Broker
+                </small>
+
+                <strong>
+                    EMQX Cloud
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SMART DEVICES
+    ====================================================== -->
+
+    <section class="section-title">
+
+        <h2>
+            Device Control
+        </h2>
+
+        <p>
+            Real-time monitoring and remote control
+        </p>
+
+    </section>
+
+
+
+    <section class="device-grid">
+
+
+        <!-- LIGHT 1 -->
+
+        <div
+            class="device-card"
+            id="card-light1"
+        >
+
+            <div class="device-top">
+
+                <div class="device-icon light">
+                    💡
+                </div>
+
+                <div
+                    class="device-status-dot"
+                    id="dot-light1"
+                ></div>
+
+            </div>
+
+
+            <h3>
+                Living Room Light
+            </h3>
+
+            <p class="device-location">
+                Living Room
+            </p>
+
+
+            <div
+                class="state-label"
+                id="state-light1"
+            >
+                OFF
+            </div>
+
+
+            <div class="device-actions">
+
+                <button
+                    class="btn on"
+                    onclick="sendCommand('/light1/on')"
+                >
+                    Turn ON
+                </button>
+
+                <button
+                    class="btn off"
+                    onclick="sendCommand('/light1/off')"
+                >
+                    Turn OFF
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LIGHT 2 -->
+
+        <div
+            class="device-card"
+            id="card-light2"
+        >
+
+            <div class="device-top">
+
+                <div class="device-icon light">
+                    💡
+                </div>
+
+                <div
+                    class="device-status-dot"
+                    id="dot-light2"
+                ></div>
+
+            </div>
+
+
+            <h3>
+                Laboratory Light
+            </h3>
+
+            <p class="device-location">
+                Laboratory
+            </p>
+
+
+            <div
+                class="state-label"
+                id="state-light2"
+            >
+                OFF
+            </div>
+
+
+            <div class="device-actions">
+
+                <button
+                    class="btn on"
+                    onclick="sendCommand('/light2/on')"
+                >
+                    Turn ON
+                </button>
+
+                <button
+                    class="btn off"
+                    onclick="sendCommand('/light2/off')"
+                >
+                    Turn OFF
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LIGHT 3 -->
+
+        <div
+            class="device-card"
+            id="card-light3"
+        >
+
+            <div class="device-top">
+
+                <div class="device-icon light">
+                    💡
+                </div>
+
+                <div
+                    class="device-status-dot"
+                    id="dot-light3"
+                ></div>
+
+            </div>
+
+
+            <h3>
+                Entrance Light
+            </h3>
+
+            <p class="device-location">
+                Main Entrance
+            </p>
+
+
+            <div
+                class="state-label"
+                id="state-light3"
+            >
+                OFF
+            </div>
+
+
+            <div class="device-actions">
+
+                <button
+                    class="btn on"
+                    onclick="sendCommand('/light3/on')"
+                >
+                    Turn ON
+                </button>
+
+                <button
+                    class="btn off"
+                    onclick="sendCommand('/light3/off')"
+                >
+                    Turn OFF
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MAIN DOOR -->
+
+        <div
+            class="device-card"
+            id="card-door"
+        >
+
+            <div class="device-top">
+
+                <div class="device-icon door">
+                    🔐
+                </div>
+
+                <div
+                    class="device-status-dot"
+                    id="dot-door"
+                ></div>
+
+            </div>
+
+
+            <h3>
+                Main Door
+            </h3>
+
+            <p class="device-location">
+                Access Control
+            </p>
+
+
+            <div
+                class="state-label"
+                id="state-door"
+            >
+                CLOSED
+            </div>
+
+
+            <div class="device-actions">
+
+                <button
+                    class="btn on"
+                    onclick="sendCommand('/door/open')"
+                >
+                    Open
+                </button>
+
+                <button
+                    class="btn off"
+                    onclick="sendCommand('/door/close')"
+                >
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SYSTEM INFORMATION
+    ====================================================== -->
+
+    <section class="info-panel">
+
+        <div class="info-box">
+
+            <h4>
+                Cloud Broker
+            </h4>
+
+            <p>
+                EMQX Cloud
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h4>
+                Security
+            </h4>
+
+            <p>
+                MQTT + TLS
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h4>
+                Backend
+            </h4>
+
+            <p>
+                Flask + Python
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h4>
+                Application
+            </h4>
+
+            <p>
+                Flutter Mobile App
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BACK TO HOME
+    ====================================================== -->
+
+    <section class="back-home">
+
+        <a
+            href="{{ url_for('index') }}"
+        >
+            ← Back to System Architecture
+        </a>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-title">
+            ULEAM Smart Home Showcase
+        </div>
+
+
+        <div class="footer-info">
+
+            Developed by
+
+            <strong>
+                Ing. César Sinchiguano, M.Sc.
+            </strong>
+
+        </div>
+
+
+        <div class="footer-info">
+            Universidad Laica Eloy Alfaro de Manabí
+        </div>
+
+
+        <div class="footer-info">
+            Extensión El Carmen · Software Engineering
+        </div>
+
+
+        <div class="footer-info">
+
+            IoT · Artificial Intelligence · Computer Vision ·
+            Cloud Computing
+
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+
+</body>
+
+</html>

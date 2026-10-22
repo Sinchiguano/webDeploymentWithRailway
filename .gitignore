@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+.env
+*.zip
+
+home_automation_dashboard/
+uleam_home_automation_updated/
+
+.vscode/
+.idea/

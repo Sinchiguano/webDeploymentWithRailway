@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        ULEAM Home Automation
+    </title>
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+  <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+  >
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+<nav class="top-navigation">
+
+    <a
+        href="{{ url_for('index') }}"
+        class="nav-brand"
+    >
+        <span class="nav-logo">🏠</span>
+
+        <div>
+            <strong>ULEAM Smart Home</strong>
+            <small>Software Engineering</small>
+        </div>
+    </a>
+
+
+    <div class="nav-links">
+
+        <a
+            href="{{ url_for('index') }}"
+            class="nav-link active"
+        >
+            Home
+        </a>
+
+        <a
+            href="{{ url_for('devices') }}"
+            class="nav-link"
+        >
+            Devices
+        </a>
+
+    </div>
+
+</nav>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="hero">
+
+        <div class="hero-left">
+
+            <div class="hero-icon">
+                🏠
+            </div>
+
+
+            <div>
+
+                <h1>
+                    Home Automation
+                </h1>
+
+
+                <p class="subtitle">
+                    ULEAM – Ext. El Carmen
+                </p>
+
+
+                <p class="subtitle small">
+                    Software Engineering
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="mqtt-badge"
+            class="mqtt-badge offline"
+        >
+            ● CLOUD DASHBOARD
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         PROJECT INTRODUCTION
+    ====================================================== -->
+
+    <section class="section-title">
+
+        <h2>
+            Smart Home Showcase
+        </h2>
+
+
+        <p>
+            IoT, cloud computing, computer vision and
+            intelligent access control prototype.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SYSTEM ARCHITECTURE
+    ====================================================== -->
+
+    <section class="system-architecture">
+
+
+        <!-- HEADER -->
+
+        <div class="architecture-heading">
+
+            <div>
+
+                <span class="architecture-label">
+                    PROJECT ARCHITECTURE
+                </span>
+
+
+                <h2>
+                    Home Automation System
+                </h2>
+
+
+                <p>
+                    Computer vision, cloud IoT and remote
+                    automation platform developed for
+                    ULEAM Ext. El Carmen.
+                </p>
+
+            </div>
+
+
+            <div class="architecture-online">
+
+                <span></span>
+
+                REAL-TIME IoT
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             MAIN ARCHITECTURE FLOW
+        ================================================== -->
+
+        <div class="architecture-main-flow">
+
+
+            <!-- CAMERA -->
+
+            <div class="architecture-device">
+
+                <div class="arch-icon blue">
+                    📷
+                </div>
+
+                <h3>
+                    Web Camera
+                </h3>
+
+                <p>
+                    Image Capture
+                </p>
+
+            </div>
+
+
+
+            <div class="arch-arrow">
+                →
+            </div>
+
+
+
+            <!-- FACE RECOGNITION -->
+
+            <div class="architecture-device">
+
+                <div class="arch-icon purple">
+                    ◉
+                </div>
+
+                <h3>
+                    Face Recognition
+                </h3>
+
+                <p>
+                    OpenCV + Python
+                </p>
+
+            </div>
+
+
+
+            <div class="arch-arrow">
+                →
+            </div>
+
+
+
+            <!-- RASPBERRY PI -->
+
+            <div class="architecture-device">
+
+                <div class="arch-icon green">
+                    🍓
+                </div>
+
+                <h3>
+                    Raspberry Pi 4
+                </h3>
+
+                <p>
+                    Edge Controller
+                </p>
+
+            </div>
+
+
+
+            <div class="arch-arrow mqtt-arrow">
+
+                ⇄
+
+                <small>
+                    MQTT
+                </small>
+
+            </div>
+
+
+
+            <!-- EMQX CLOUD -->
+
+            <div class="architecture-device highlight">
+
+                <div class="arch-icon cyan">
+                    ☁
+                </div>
+
+                <h3>
+                    EMQX Cloud
+                </h3>
+
+                <p>
+                    MQTT Broker
+                </p>
+
+
+                <div class="mini-badge">
+                    TLS • Port 8883
+                </div>
+
+            </div>
+
+
+
+            <div class="arch-arrow">
+                ⇄
+            </div>
+
+
+
+            <!-- REMOTE SERVICES -->
+
+            <div class="applications-box">
+
+                <div class="applications-title">
+                    REMOTE SERVICES
+                </div>
+
+
+                <div class="applications-grid">
+
+
+                    <!-- FLUTTER -->
+
+                    <div>
+
+                        <span>
+                            📱
+                        </span>
+
+                        <strong>
+                            Flutter
+                        </strong>
+
+                        <small>
+                            Mobile App
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- FLASK -->
+
+                    <div>
+
+                        <span>
+                            🌐
+                        </span>
+
+                        <strong>
+                            Flask
+                        </strong>
+
+                        <small>
+                            Web Dashboard
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- DATABASE -->
+
+                    <div>
+
+                        <span>
+                            🗄️
+                        </span>
+
+                        <strong>
+                            PostgreSQL
+                        </strong>
+
+                        <small>
+                            Database
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PHYSICAL AUTOMATION
+        ================================================== -->
+
+        <div class="architecture-divider">
+
+            PHYSICAL AUTOMATION
+
+        </div>
+
+
+
+        <div class="physical-controls">
+
+
+            <!-- RELAY -->
+
+            <div class="relay-box">
+
+                <span>
+                    ⚡
+                </span>
+
+
+                <div>
+
+                    <strong>
+                        Relay Module
+                    </strong>
+
+                    <small>
+                        GPIO Output Control
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="physical-line">
+                →
+            </div>
+
+
+
+            <!-- LIGHT 1 -->
+
+            <div class="physical-device">
+
+                <span>
+                    💡
+                </span>
+
+                <strong>
+                    Light 1
+                </strong>
+
+                <small>
+                    Living Room
+                </small>
+
+            </div>
+
+
+
+            <!-- LIGHT 2 -->
+
+            <div class="physical-device">
+
+                <span>
+                    💡
+                </span>
+
+                <strong>
+                    Light 2
+                </strong>
+
+                <small>
+                    Laboratory
+                </small>
+
+            </div>
+
+
+
+            <!-- LIGHT 3 -->
+
+            <div class="physical-device">
+
+                <span>
+                    💡
+                </span>
+
+                <strong>
+                    Light 3
+                </strong>
+
+                <small>
+                    Entrance
+                </small>
+
+            </div>
+
+
+
+            <!-- DOOR -->
+
+            <div class="physical-device door-device">
+
+                <span>
+                    🔐
+                </span>
+
+                <strong>
+                    Main Door
+                </strong>
+
+                <small>
+                    Access Control
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TECHNOLOGIES
+    ====================================================== -->
+
+    <section class="overview-card">
+
+
+        <div class="overview-item">
+
+            <div class="overview-icon">
+                ☁️
+            </div>
+
+            <div class="overview-title">
+                EMQX Cloud
+            </div>
+
+            <div class="overview-text">
+                Remote MQTT Broker
+            </div>
+
+        </div>
+
+
+
+        <div class="overview-item">
+
+            <div class="overview-icon">
+                🐍
+            </div>
+
+            <div class="overview-title">
+                Python
+            </div>
+
+            <div class="overview-text">
+                Flask + Backend Logic
+            </div>
+
+        </div>
+
+
+
+        <div class="overview-item">
+
+            <div class="overview-icon">
+                📡
+            </div>
+
+            <div class="overview-title">
+                MQTT
+            </div>
+
+            <div class="overview-text">
+                IoT Communication
+            </div>
+
+        </div>
+
+
+
+        <div class="overview-item">
+
+            <div class="overview-icon">
+                🍓
+            </div>
+
+            <div class="overview-title">
+                Raspberry Pi 4
+            </div>
+
+            <div class="overview-text">
+                Edge Computing
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- =====================================================
+     DEVICE CONTROL CTA
+====================================================== -->
+
+<section class="control-cta">
+
+    <div class="control-cta-content">
+
+        <span class="control-cta-label">
+            LIVE CONTROL
+        </span>
+
+        <h2>
+            Smart Device Control
+        </h2>
+
+        <p>
+            Monitor and control the lighting system
+            and intelligent access door in real time.
+        </p>
+
+        <a
+            href="{{ url_for('devices') }}"
+            class="control-cta-button"
+        >
+            Open Control Dashboard
+            <span>→</span>
+        </a>
+
+    </div>
+
+
+    <div class="control-cta-visual">
+
+        <div class="mini-device">
+            💡
+            <span>Light 1</span>
+        </div>
+
+        <div class="mini-device">
+            💡
+            <span>Light 2</span>
+        </div>
+
+        <div class="mini-device">
+            💡
+            <span>Light 3</span>
+        </div>
+
+        <div class="mini-device">
+            🔐
+            <span>Door</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-title">
+
+            ULEAM Smart Home Showcase
+
+        </div>
+
+
+        <div class="footer-info">
+
+            Developed by
+
+            <strong>
+                Ing. César Sinchiguano, M.Sc.
+            </strong>
+
+        </div>
+
+
+        <div class="footer-info">
+
+            Universidad Laica Eloy Alfaro de Manabí
+
+        </div>
+
+
+        <div class="footer-info">
+
+            Extensión El Carmen · Software Engineering
+
+        </div>
+
+
+        <div class="footer-info">
+
+            IoT · Artificial Intelligence · Computer Vision ·
+            Cloud Computing
+
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+</body>
+
+</html>
