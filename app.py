@@ -16,12 +16,16 @@ app = Flask(__name__)
 # MQTT CONFIGURATION
 # --------------------------------------------------
 # Locate the shared project configuration
-BASE_DIR = Path(__file__).resolve().parents[2]
+# BASE_DIR = Path(__file__).resolve().parents[2]
 
-load_dotenv(
-    BASE_DIR / ".env",
-    override=True
-)
+# load_dotenv(
+#     BASE_DIR / ".env",
+#     override=True
+# )
+
+load_dotenv()
+
+
 
 BROKER = os.environ["MQTT_HOST"]
 PORT = int(os.environ["MQTT_PORT"])
